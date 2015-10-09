@@ -10,6 +10,8 @@
         /*jshint validthis: true */
         var vm = this;
 
+        vm.adminMode = false;
+
         vm.catList = [
         	{
         		name: 'harry',
@@ -36,15 +38,30 @@
         		pic: 'img/littleCuteCat4.jpg',        			
         		clickCount : 0
         	}
-        ];
+        ];       
 
         vm.selectCat = function(pos) {
-        	vm.selectedCat = vm.catList[pos];
-        }
+        	vm.selectedCat = angular.copy(vm.catList[pos]);
+        	vm.selectedCat.pos = pos;
+        };
         
-        vm.clickIncrement = function(cat) {
+        vm.clickIncrement = function(cat) {        	
         	cat.clickCount = cat.clickCount +1;
         };
+
+        vm.activateAdminMode = function() {
+        	vm.adminMode = true;
+        };
+
+        vm.cancelAdminMode = function() {
+        	vm.selectedCat = vm.catList[vm.selectedCat.pos];
+        	vm.adminMode = false;
+        };
+
+        vm.saveCat = function() {
+        	vm.catList[vm.selectedCat.pos] = vm.selectedCat;
+        	vm.adminMode = false;
+        }
 
         activate();
 

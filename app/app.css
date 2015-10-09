@@ -1,3 +1,10 @@
 .cat-clicker {
 	width: 400px;
 }
+
+
+.admin-area {	
+	display: inline-block;
+	font-size: 10px;
+	font-style: italic;
+}

@@ -1,7 +1,6 @@
 <div data-ng-repeat="cat in AppController.catList">
-	<h3 data-ng-click="AppController.selectCat($index)">{{cat.name}}</h3>	
+	<h3 data-ng-hide="AppController.adminMode" data-ng-click="AppController.selectCat($index)">{{cat.name}}</h3>	
 </div>
-
 <hr>
 
 <div>
@@ -10,4 +9,15 @@
 	<img class="cat-clicker" 
 	data-ng-src="{{AppController.selectedCat.pic}}" data-ng-click="AppController.clickIncrement(AppController.selectedCat)"> 
 	<span>{{AppController.selectedCat.clickCount}}</span>
+	<button data-ng-hide="AppController.adminMode" data-ng-click="AppController.activateAdminMode()">Activate Admin Mode</button>
+	<form name="adminMode" class="admin-area" data-ng-show="AppController.adminMode">		
+			Name:<input name="name{{$index}}" type="text" value="{{ AppController.selectedCat.name }}" data-ng-model="AppController.selectedCat.name">
+			Pic:<input name="pic{{$index}}" type="text" value="{{ AppController.selectedCat.pic }}" data-ng-model="AppController.selectedCat.pic">
+			Clicks:<input name="click{{$index}}" type="text" value="{{ AppController.selectedCat.clickCount }}" data-ng-model="AppController.selectedCat.clickCount">		
+
+			<button data-ng-show="AppController.adminMode" data-ng-click="AppController.saveCat()">Save</button>
+
+	<button data-ng-show="AppController.adminMode" data-ng-click="AppController.cancelAdminMode()">Cancel</button>
+	</form>
+	
 </div>
