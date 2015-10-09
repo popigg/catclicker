@@ -1,0 +1,19 @@
+{
+  "name": "catClicker",
+  "version": "0.1.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {    
+    "postinstall": "bower install"
+  },
+  "author": "@popigg",
+  "license": "ISC",
+  "dependencies": {
+    "bower": "^1.3.12",
+    "express": "^4.11.1",    
+    "swig": "^1.4.2"
+  },
+  "engines": {
+    "node": "0.12.x"
+  }
+}
