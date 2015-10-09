@@ -10,14 +10,40 @@
         /*jshint validthis: true */
         var vm = this;
 
-        vm.clickCount = 0;
-        vm.clickIncrement = function() {
-        	vm.clickCount = vm.clickCount +1;
-        };
+        vm.catList = [
+        	{
+        		name: 'harry',
+        		pic: 'img/littleCuteCat.jpg', 
+        		clickCount : 0      			
+        	},
+        	{
+        		name: 'sally',
+        		pic: 'img/littleCuteCat1.jpg',        			
+        		clickCount : 0
+        	},
+        	{
+        		name: 'robby',
+        		pic: 'img/littleCuteCat2.jpg',        			
+        		clickCount : 0
+        	},
+        	{
+        		name: 'jenny',
+        		pic: 'img/littleCuteCat3.jpg',        			
+        		clickCount : 0
+        	},
+        	{
+        		name: 'natz',
+        		pic: 'img/littleCuteCat4.jpg',        			
+        		clickCount : 0
+        	}
+        ];
 
-        vm.clickCount1 = 0;
-        vm.clickIncrement1 = function() {
-        	vm.clickCount1 = vm.clickCount1 +1;
+        vm.selectCat = function(pos) {
+        	vm.selectedCat = vm.catList[pos];
+        }
+        
+        vm.clickIncrement = function(cat) {
+        	cat.clickCount = cat.clickCount +1;
         };
 
         activate();
