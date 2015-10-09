@@ -2,10 +2,7 @@
   "name": "catClicker",
   "version": "0.1.0",
   "description": "",
-  "main": "server.js",
-  "scripts": {    
-    "postinstall": "bower install"
-  },
+  "main": "server.js",  
   "author": "@popigg",
   "license": "ISC",
   "dependencies": {
