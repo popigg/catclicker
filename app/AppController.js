@@ -46,7 +46,7 @@
         };
         
         vm.clickIncrement = function(cat) {        	
-        	cat.clickCount = cat.clickCount +1;
+        	cat.clickCount = parseInt(cat.clickCount) +1;
         };
 
         vm.activateAdminMode = function() {
