@@ -54,14 +54,18 @@
         };
 
         vm.cancelAdminMode = function() {
-        	vm.selectedCat = vm.catList[vm.selectedCat.pos];
+        	vm.selectedCat.name = vm.catList[vm.selectedCat.pos].name;
+        	vm.selectedCat.pic = vm.catList[vm.selectedCat.pos].pic;
+        	vm.selectedCat.clickCount = vm.catList[vm.selectedCat.pos].clickCount;
+
         	vm.adminMode = false;
         };
 
         vm.saveCat = function() {
-        	vm.catList[vm.selectedCat.pos] = vm.selectedCat;
+        	vm.catList[vm.selectedCat.pos] = angular.copy(vm.selectedCat);
+			
         	vm.adminMode = false;
-        }
+        };
 
         activate();
 
